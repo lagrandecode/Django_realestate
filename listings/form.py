@@ -6,11 +6,10 @@ from .models import Listings
 class CreatListForm(ModelForm):
     class Meta:
         model = Listings 
-        field = [
+        fields = [
             'title',
             'price',
             'house_no', 
             'square_metre', 
             'description', 
-            'address',
-        ]
+            'address']

@@ -1,3 +1,4 @@
+from multiprocessing import context
 from unicodedata import name
 from django.shortcuts import render
 from .models import Listings
@@ -24,4 +25,9 @@ def listing_retrieve(request, pk):
 #view for form 
 
 def listing_create(request):
-    
+    form = CreatListForm()
+    context = {
+        "form" : form
+    }
+    return render(request, 'createform.html', context)
+
