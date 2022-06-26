@@ -1,6 +1,6 @@
 from multiprocessing import context
 from unicodedata import name
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Listings
 from .form import CreatListForm
 
@@ -26,6 +26,11 @@ def listing_retrieve(request, pk):
 
 def listing_create(request):
     form = CreatListForm()
+    if request.method == "POST":
+        form = CreatListForm(request.POST)
+        if form.is_valid:
+            form.save()
+            return redirect('/')
     context = {
         "form" : form
     }
