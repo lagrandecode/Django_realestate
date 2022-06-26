@@ -7,5 +7,5 @@ from listings.views import listing_list, listing_retrieve
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', listing_list),
-    path('retrieve/<pk>/', listing_retrieve)
+    path('listing/<pk>/', listing_retrieve)
 ]
