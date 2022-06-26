@@ -8,4 +8,4 @@ def listing_list(request):
     context = {
         "listing" : listing
     }
-    return render(request, "lisiting.html", context)
+    return render(request, 'listings/listing.html', context)
