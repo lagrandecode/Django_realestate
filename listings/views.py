@@ -51,3 +51,10 @@ def listing_update(request, pk):
     }
     return render(request, 'listing_update.html', context)
 
+
+
+def listing_delete(request, pk):
+    listingDelete = Listings.objects.get(id=pk)
+    listingDelete.delete()
+    return redirect('/')
+
